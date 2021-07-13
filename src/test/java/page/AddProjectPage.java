@@ -47,6 +47,10 @@ public class AddProjectPage extends BasePage {
         getProjectName().sendKeys(text);
     }
 
+    public void clearName (){
+        getProjectName().clear();
+    }
+
     public void clickAddProjectButton2() {
         getAddProjectButton2().click();
     }

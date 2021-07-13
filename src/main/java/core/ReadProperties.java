@@ -25,6 +25,9 @@ public class ReadProperties {
     }
 
     public boolean getHeadless() {
-        return Boolean.parseBoolean(properties.getProperty("headless"));
+        return Boolean.parseBoolean(properties.getProperty("headless"));}
     }
-}
+
+
+
+

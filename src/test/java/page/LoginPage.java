@@ -47,9 +47,7 @@ public class LoginPage extends BasePage {
     public WebElement getErrorLabel() {
         return driver.findElement(error_Label_By);
     }
-    public String getErrorLabelText (){
-        return getErrorLabel().getText();
-    }
+    public String getErrorLabelText (){ return getErrorLabel().getText(); }
 
     public void setUsername(String text) {
         getUsernameInput().sendKeys(text);
