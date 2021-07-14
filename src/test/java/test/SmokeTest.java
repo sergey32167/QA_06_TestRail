@@ -7,10 +7,7 @@ import org.testng.annotations.Parameters;
 import org.testng.annotations.Test;
 import page.DashboardPage;
 import page.LoginPage;
-import step.AddProjectStep;
-import step.DeleteProjectStep;
-import step.EditProjectStep;
-import step.LoginStep;
+import step.*;
 
 public class SmokeTest extends BaseTest {
     @Parameters({"login-value", "psw-value"})
@@ -59,6 +56,14 @@ public class SmokeTest extends BaseTest {
         deleteProjectStep.deleteProject("new Project1");
     }
 
+    @Test
+    public void addEditDeleteTestCase(@Optional("atrostyanko+0601@gmail.com") String login, @Optional("hYE/RiquvQVIzXfiBwm3")String psw){
+        LoginStep loginStep = new LoginStep(driver);
+        loginStep.login(login, psw);
+        AddProjectStep addProjectStep = new AddProjectStep(driver);
+        AddEditDeleteTestCaseStep addTestCaseStep = new AddEditDeleteTestCaseStep(driver);
+        addProjectStep.addProject("Hello Test");
+    }
 
 
 }
