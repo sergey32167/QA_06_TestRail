@@ -24,6 +24,8 @@ public class ReadProperties {
         return properties.getProperty("browser");
     }
 
+    public int getTimeOut() { return Integer.parseInt(properties.getProperty("timeout"));}
+
     public boolean getHeadless() {
         return Boolean.parseBoolean(properties.getProperty("headless"));}
     }
