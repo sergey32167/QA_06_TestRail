@@ -6,9 +6,10 @@ import org.openqa.selenium.*;
 import java.util.List;
 
 public class UIElement implements WebElement {
-    private final By by;
+    private By by;
     private final WebDriver driver;
     private final WebElement webElement;
+    private JavascriptExecutor jsExecutor;
     private JavascriptExecutor javascriptExecutor;
     private Waits waits;
 
@@ -19,6 +20,13 @@ public class UIElement implements WebElement {
         this.webElement = driver.findElement(by);
         this.javascriptExecutor = (JavascriptExecutor) driver;
         this.waits = new Waits(driver);
+    }
+
+    public UIElement(WebDriver driver, WebElement webElement) {
+        this.driver = driver;
+        this.jsExecutor = (JavascriptExecutor) driver;
+        this.waits = new Waits(driver);
+        this.webElement = webElement;
     }
 
     @Override
@@ -118,5 +126,9 @@ public class UIElement implements WebElement {
 
     public void scrollIntoView(){
         javascriptExecutor.executeScript("arguments[0].scrollIntoView(true);", webElement);
+    }
+
+    public WebElement getParent() {
+        return (WebElement) ((JavascriptExecutor) driver).executeScript("return arguments[0].parentNode;", webElement);
     }
 }
