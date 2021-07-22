@@ -15,6 +15,7 @@ public class RadioButtonTest extends BaseTest {
         loginStep.login(login, psw);
 
         driver.get("https://aqa06onl02.testrail.io/index.php?/admin/projects/add");
+
         RadioButton radioButton = new RadioButton(driver, By.name("suite_mode"));
         radioButton.selectByIndex(2);
         radioButton.selectByText("Use multiple test suites to manage cases");

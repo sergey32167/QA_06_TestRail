@@ -22,8 +22,10 @@ public class RadioButton {
     public RadioButton(WebDriver driver, By by) {
         this.driver = driver;
 
+//        options = driver.findElements(by); для конструктора By by
+
         for (WebElement element: driver.findElements(by)) {
-            options.add(new UIElement(driver, element));
+            options.add(new UIElement(driver, element));  // для конструктора с WebElement
         }
     }
 
