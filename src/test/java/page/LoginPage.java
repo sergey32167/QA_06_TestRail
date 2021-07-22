@@ -1,5 +1,6 @@
 package page;
 
+import Elements.UIElement;
 import baseEntities.BasePage;
 import org.openqa.selenium.By;
 import org.openqa.selenium.NoSuchElementException;
@@ -8,6 +9,7 @@ import org.openqa.selenium.WebElement;
 
 public class LoginPage extends BasePage {
 
+    private static final By emailInputBy = By.id("name");
     private final static By username_Input_By = By.id("name");
     private final static By password_Input_By = By.id("password");
     private final static By login_Button_By = By.id("button_primary");
@@ -30,6 +32,10 @@ public class LoginPage extends BasePage {
         } catch (NoSuchElementException ex) {
             return false;
         }
+    }
+
+    public UIElement getEmailInput() {
+        return new UIElement(driver, emailInputBy);
     }
 
     public WebElement getUsernameInput() {

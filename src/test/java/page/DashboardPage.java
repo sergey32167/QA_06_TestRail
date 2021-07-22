@@ -12,6 +12,8 @@ public class DashboardPage extends BasePage {
     private final static By dashboard_Label_By = By.id("navigation-dashboard");
     private final static By addProject_Button_By = By.id("sidebar-projects-add");
     private final static By project_button_ByName = By.xpath("//*[text()= 'HelloTest']");
+    private final static By menu_Button_By = By.id("navigation-menu");
+
 
     public DashboardPage(WebDriver driver, boolean openPageByURL) {
         super(driver, openPageByURL);
@@ -38,11 +40,16 @@ public class DashboardPage extends BasePage {
     public WebElement getAddProjectButton(){
         return driver.findElement(addProject_Button_By);
     }
+    public WebElement getMenuButton(){
+        return driver.findElement(menu_Button_By);
+    }
 
     public WebElement getProjectButton(String project_ByName) { return driver.findElement(project_button_ByName); }
 
     public void clickAddProjectButton() {
         getAddProjectButton().click();
+    }
+    public void clickMenuButton() { getMenuButton().click();
     }
 
     public void clickProjectButton (){

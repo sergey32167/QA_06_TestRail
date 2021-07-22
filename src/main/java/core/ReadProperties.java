@@ -24,6 +24,16 @@ public class ReadProperties {
         return properties.getProperty("browser");
     }
 
+    public String getPassword() {
+        return properties.getProperty("password");
+    }
+
+    public String getUsername() {
+        return properties.getProperty("username");
+    }
+
+    public int getTimeOut() { return Integer.parseInt(properties.getProperty("timeout"));}
+
     public boolean getHeadless() {
         return Boolean.parseBoolean(properties.getProperty("headless"));}
     }
